@@ -15,6 +15,31 @@
     Enable Push Messages
   </button>
   <p id="registration"></p>
+
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCqSntraM6hojyf_ry6oVPNGUpy3hEA8tg",
+    authDomain: "test-notifications-8aace.firebaseapp.com",
+    databaseURL: "https://test-notifications-8aace.firebaseio.com",
+    projectId: "test-notifications-8aace",
+    storageBucket: "test-notifications-8aace.appspot.com",
+    messagingSenderId: "981415205506",
+    appId: "1:981415205506:web:ce16c5ddeca64d4713729b",
+    measurementId: "G-YWD63VPQZ5"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
   <script src="main.js"></script>
   
 </body>
