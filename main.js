@@ -21,7 +21,7 @@ function subscribe() {
     navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
       serviceWorkerRegistration.pushManager.subscribe({
           userVisibleOnly: true,
-          applicationServerKey: base64UrlToUint8Array("BNt9oSS+aSrHXioIdvmsV0kw2LKO08/FxdZbJt/257sEg9u6v5YFS17r+IebV35JcN0qrB+VNOr1uBkjyKcSxXM=")
+          applicationServerKey: base64UrlToUint8Array("BOxJtzrx-TOaIcsXloM-0ZTJTLqubFrBsqj1d9DKc-BhyL3FSwbB1rfiV_u85GR1luY_cJtMN6rWvFWGpDD8y3Q")
         })
         .then(function(subscription) {
           // The subscription was successful
