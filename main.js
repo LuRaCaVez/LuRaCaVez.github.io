@@ -1,3 +1,17 @@
+// Converts the URL-safe base64 encoded |base64UrlData| to an Uint8Array buffer.
+function base64UrlToUint8Array(base64UrlData) {
+    var padding = '='.repeat((4 - base64UrlData.length % 4) % 4);
+    var base64 = (base64UrlData + padding).replace(/\-/g, '+').replace(/_/g, '/');
+  
+    var rawData = window.atob(base64);
+    var buffer = new Uint8Array(rawData.length);
+  
+    for (var i = 0; i < rawData.length; ++i) {
+      buffer[i] = rawData.charCodeAt(i);
+    }
+    return buffer;
+  }
+
 function subscribe() {
     // Disable the button so it can't be changed while
     // we process the permission request
@@ -7,7 +21,7 @@ function subscribe() {
     navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
       serviceWorkerRegistration.pushManager.subscribe({
           userVisibleOnly: true,
-          applicationServerKey: window.base64UrlToUint8Array("AAAA5IDnmoI:APA91bFlarD-p3K_IkezqaXgQNKdvEq5Im6b1fjzg-N4JCDLYV87d49adigrEB6Onl8Bs2NBbz8BUPe1tfQ2CSiFCty_LrScFgwJPpAGQ63GDYjloleXuWu4nawMLLSHdGryBUZy7qns")
+          applicationServerKey: base64UrlToUint8Array("AAAA5IDnmoI:APA91bFlarD-p3K_IkezqaXgQNKdvEq5Im6b1fjzg-N4JCDLYV87d49adigrEB6Onl8Bs2NBbz8BUPe1tfQ2CSiFCty_LrScFgwJPpAGQ63GDYjloleXuWu4nawMLLSHdGryBUZy7qns")
         })
         .then(function(subscription) {
           // The subscription was successful
