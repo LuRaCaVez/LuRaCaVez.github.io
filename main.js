@@ -31,7 +31,7 @@ function subscribe() {
   
           // TODO: Send the subscription.endpoint to your server
           // and save it to send a push message at a later date
-          return sendSubscriptionToServer(subscription);
+          alert(subscription.endpoint);
         })
         .catch(function(e) {
           if (Notification.permission === 'denied') {
@@ -137,7 +137,7 @@ function initialiseState() {
           }
   
           // Keep your server in sync with the latest subscriptionId
-          sendSubscriptionToServer(subscription);
+          alert(subscription.endpoint);
   
           // Set your UI to show they have subscribed for
           // push messages
